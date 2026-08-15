@@ -1,4 +1,5 @@
 import StudyApp from "./StudyApp";
+import Link from "next/link";
 
 export const metadata = { title: "Study — ESL Pals IL" };
 
@@ -10,6 +11,17 @@ export default function StudyPage() {
         <p className="mt-1 text-sm text-zinc-500">
           חזרות SRS, רצפים ומעקב התקדמות — משולב עם תוכנית הלימוד של ESL Pals IL
         </p>
+      </div>
+      <div className="mb-6" dir="rtl">
+        <Link href="/study/today" className="block rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-5 shadow-sm transition hover:shadow-md">
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-sm font-bold text-emerald-900">🎯 השיעור שלך היום</div>
+              <div className="mt-0.5 text-xs text-emerald-700">12 דקות — בלי תירוצים</div>
+            </div>
+            <span className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-bold text-white">▶️ התחל</span>
+          </div>
+        </Link>
       </div>
       <StudyApp />
     </div>
