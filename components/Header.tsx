@@ -10,6 +10,7 @@ export default function Header() {
         </Link>
         <nav className="flex items-center gap-4 text-sm text-zinc-600">
           <Link href="/general-english/A1" className="hover:text-zinc-900">General English</Link>
+          <Link href="/study" className="hover:text-zinc-900">🎯 Study</Link>
           <a href="https://eslpals.com/general-english/A1" target="_blank" rel="noopener" className="inline-flex items-center gap-1 hover:text-zinc-900">
             eslpals.com <span className="text-[12px]">↗</span>
           </a>
