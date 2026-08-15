@@ -5,7 +5,8 @@ import { A0_LESSONS } from './a0-lessons'
 import { B1_LESSONS } from './b1-lessons'
 import { NGSL_500 } from './ngsl'
 import { A1_LESSONS, A2_LESSONS, ALL_LESSONS } from './lessons'
-import { getNextReview, getStreakBonus, getStudySession, checkAnswer } from './srs'
+import { getNextReview, getStudySession, checkAnswer } from './srs'
+import { V2MAP } from './v2map'
 import { useAuth } from './auth'
 
 const SB_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -82,21 +83,13 @@ export default function StudyApp() {
   const answerCard = (answer) => {
     if (!studySession || studySession.done) return
     const card = studySession.queue[studySession.current]
-    const correct = checkAnswer(card, answer)
+    // front=Hebrew shown; correct answer is the English side (checkAnswer: user input, correct)
+    const { correct } = checkAnswer(String(answer || ''), String(card.back || ''))
     const q = [...studySession.queue]
-    const updated = { ...card }
-    const bonus = getStreakBonus(studySession.right)
+    const updated = getNextReview({ ...card }, correct ? 2 : 0)
     if (correct) {
-      updated.reps = (updated.reps || 0) + 1
-      updated.ease = Math.min(2.8, (updated.ease || 2.5) + 0.05)
-      updated.interval_days = getNextReview(updated.reps, updated.ease)
-      updated.next_review = new Date(Date.now() + updated.interval_days * 86400000).toISOString().slice(0, 10)
-      setXp(x => x + 10 + bonus)
+      setXp(x => x + 10)
     } else {
-      updated.reps = 0
-      updated.ease = Math.max(1.3, (updated.ease || 2.5) - 0.2)
-      updated.interval_days = 1
-      updated.next_review = new Date(Date.now() + 86400000).toISOString().slice(0, 10)
       setMistakes(m => [{ ...card, user: answer }, ...m].slice(0, 50))
     }
     q[studySession.current] = updated
@@ -112,11 +105,14 @@ export default function StudyApp() {
     })
     if (supabase) {
       supabase.from('srs_cards').update({
-        reps: updated.reps, ease: updated.ease,
-        interval_days: updated.interval_days, next_review: updated.next_review
+        repetitions: updated.repetitions, ease_factor: updated.ease_factor,
+        interval_days: updated.interval_days, next_review: updated.next_review,
+        last_reviewed: new Date().toISOString().slice(0, 10)
       }).eq('id', updated.id).then()
     }
   }
+
+  const openLesson = (lesson) => setActiveLesson(lesson)
 
   const toggleLesson = async (lesson) => {
     const key = `${lesson.level}-${lesson.id}`
@@ -186,11 +182,11 @@ export default function StudyApp() {
               <span>✅ {studySession.right}</span>
             </div>
             <div className="rounded-xl bg-zinc-50 p-8 text-center">
-              <div className="text-3xl font-bold">{card.english}</div>
+              <div className="text-3xl font-bold" dir="rtl">{card.front}</div>
               <div className="mt-2 text-sm text-zinc-400">{card.example || ''}</div>
             </div>
             <form onSubmit={(e) => { e.preventDefault(); const v = e.target.answer.value; e.target.answer.value = ''; answerCard(v) }} className="mt-4 flex gap-2">
-              <input name="answer" autoFocus placeholder="תרגום בעברית…" className="flex-1 rounded-xl border border-zinc-200 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-blue-500/30" dir="rtl" />
+              <input name="answer" autoFocus placeholder="התרגום באנגלית…" className="flex-1 rounded-xl border border-zinc-200 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-blue-500/30" dir="rtl" />
               <button type="submit" className="rounded-xl bg-zinc-900 px-6 py-3 text-sm font-medium text-white hover:bg-zinc-700">בדיקה</button>
             </form>
           </div>
@@ -234,15 +230,53 @@ export default function StudyApp() {
           <div className="grid gap-3 sm:grid-cols-2">
             {LEVELS.find(l => l.id === activeLevel).lessons.map(lesson => {
               const done = progress[`${lesson.level}-${lesson.id}`]
+              const v2id = V2MAP[`${lesson.level}|${lesson.title.trim().toLowerCase()}`]
               return (
-                <button key={`${lesson.level}-${lesson.id}`} onClick={() => toggleLesson(lesson)}
-                  className={`flex items-center justify-between rounded-2xl border p-4 text-right shadow-sm transition hover:shadow-md ${done ? 'border-emerald-200 bg-emerald-50' : 'border-zinc-100 bg-white'}`}>
-                  <div>
+                <div key={`${lesson.level}-${lesson.id}`} className="flex items-center justify-between rounded-2xl border p-4 text-right shadow-sm transition hover:shadow-md ${done ? 'border-emerald-200 bg-emerald-50' : 'border-zinc-100 bg-white'}">
+                  <div className="min-w-0">
                     <div className="text-sm font-semibold">{lesson.title}</div>
                     {lesson.subtitle && <div className="mt-0.5 text-xs text-zinc-400">{lesson.subtitle}</div>}
+                    <div className="mt-1.5 flex flex-wrap gap-1.5">
+                      {lesson.keys && lesson.keys.slice(0, 2).map((k, i) => (
+                        <span key={i} className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] text-blue-700" dir="ltr">{k}</span>
+                      ))}
+                    </div>
                   </div>
-                  <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs ${done ? 'bg-emerald-500 text-white' : 'bg-zinc-100 text-zinc-400'}`}>✓</span>
-                </button>
+                  <div className="flex shrink-0 items-center gap-2">
+                    {lesson.v2id ? (
+                      <a href={`/lesson-v2/${lesson.v2id}`} className="rounded-full bg-zinc-900 px-4 py-2 text-xs font-bold text-white hover:bg-zinc-700">לשיעור ▶️</a>
+                    ) : (
+                      <button onClick={() => openLesson(lesson)} className="rounded-full bg-zinc-900 px-4 py-2 text-xs font-bold text-white hover:bg-zinc-700">פתח ▶️</button>
+                    )}
+                    <button onClick={() => toggleLesson(lesson)} title="סמן השלמה"
+                      className={`flex h-6 w-6 items-center justify-center rounded-full text-xs ${done ? 'bg-emerald-500 text-white' : 'bg-zinc-100 text-zinc-400'}`}>✓</button>
+                  </div>
+                  {activeLesson && activeLesson.level === lesson.level && activeLesson.id === lesson.id && (
+                    <div className="mt-3 w-full space-y-3 rounded-xl bg-zinc-50 p-4 text-right">
+                      <div className="text-xs font-bold">🔑 משפטי מפתח</div>
+                      {lesson.keys && lesson.keys.map((k, i) => (
+                        <div key={i} className="rounded-lg bg-white px-3 py-2 text-sm" dir="ltr">{k}</div>
+                      ))}
+                      {lesson.dialogue && (
+                        <>
+                          <div className="pt-2 text-xs font-bold">💬 דיאלוג</div>
+                          <pre className="whitespace-pre-wrap rounded-lg bg-white p-3 text-sm" dir="ltr">{lesson.dialogue}</pre>
+                        </>
+                      )}
+                      {lesson.vocab && (
+                        <>
+                          <div className="pt-2 text-xs font-bold">📝 אוצר מילים</div>
+                          <div className="flex flex-wrap gap-1.5">
+                            {lesson.vocab.map((v, i) => (
+                              <span key={i} className="rounded-full bg-white px-2.5 py-1 text-[11px]">{v.en} · {v.he}</span>
+                            ))}
+                          </div>
+                        </>
+                      )}
+                      <button onClick={() => setActiveLesson(null)} className="w-full rounded-full bg-zinc-200 px-4 py-2 text-xs font-medium hover:bg-zinc-300">סגור</button>
+                    </div>
+                  )}
+                </div>
               )
             })}
           </div>
