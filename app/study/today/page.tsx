@@ -1,5 +1,6 @@
-import { BookOpen, Headphones, MessageCircle, Mic, Clock, ChevronLeft, CheckCircle2, ArrowLeft } from "lucide-react";
+import { BookOpen, Headphones, MessageCircle, Mic, Clock, ChevronLeft, CheckCircle2, ArrowLeft, Download } from "lucide-react";
 import Link from "next/link";
+import TTSButton from "@/components/TTSButton";
 
 /* ── Lesson Data: Unit 3 — Experiences & Feelings ── */
 const LESSON = {
@@ -163,6 +164,23 @@ export default function TodayLessonPage() {
         </div>
       </div>
 
+      {/* ── Anki Download Button ── */}
+      <div className="flex gap-3">
+        <a
+          href="/api/anki/export?unit=3&format=csv"
+          className="flex flex-1 items-center justify-center gap-2 rounded-2xl border-2 border-blue-200 bg-blue-50 p-4 text-sm font-bold text-blue-700 shadow-sm transition hover:shadow-md"
+        >
+          <Download className="h-4 w-4" />
+          📥 הורד לאנקי (20 כרטיסיות)
+        </a>
+        <Link
+          href="/anki"
+          className="flex items-center justify-center rounded-2xl border border-zinc-100 bg-white px-4 text-sm text-zinc-600 shadow-sm transition hover:shadow-md"
+        >
+          הוראות ↗
+        </Link>
+      </div>
+
       {/* ── Skill Cards ── */}
       {SECTIONS.map((section) => (
         <div
@@ -221,7 +239,10 @@ function VocabSection() {
         {VOCAB.map((word) => (
           <details key={word.en} className="group rounded-xl border border-zinc-100 bg-zinc-50 p-3 transition hover:bg-white">
             <summary className="cursor-pointer list-none">
-              <div className="font-bold text-zinc-900">{word.en}</div>
+              <div className="flex items-center">
+                <span className="font-bold text-zinc-900">{word.en}</span>
+                <TTSButton word={word.en} />
+              </div>
               <div className="text-[12px] text-zinc-500">{word.he}</div>
             </summary>
             <div className="mt-2 border-t border-zinc-100 pt-2 text-[12px] text-zinc-600 italic">
