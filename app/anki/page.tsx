@@ -43,20 +43,30 @@ export default function AnkiPage() {
       <div className="rounded-2xl border-2 border-purple-200 bg-purple-50 p-5 shadow-sm">
         <div className="flex items-center gap-2 text-lg font-bold text-purple-900">
           <Download className="h-5 w-5" />
-          חבילה מוכנה (APKG)
+          חבילה מוכנה (APKG) — מתוקן!
         </div>
-        <p className="mt-1 text-sm text-purple-700">240 כרטיסיות + 30 תמונות AI אמיתיות — דאבל קליק ל-Anki</p>
-        <a href="/anki/esl-pals-v4-final-30-real.apkg" download className="mt-3 inline-flex items-center gap-2 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-purple-700">
-          📦 הורד APKG (2.9MB)
+        <p className="mt-1 text-sm text-purple-700">240 כרטיסיות + 30 תמונות AI אמיתיות — עובד ב-Anki 24+</p>
+        <a href="/anki/esl-pals-v4-final-FIXED-STICKY-2.76MB.apkg" download className="mt-3 inline-flex items-center gap-2 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-purple-700">
+          📦 V4 FINAL FIXED — עובד ב-Anki 24+ (2.76MB)
         </a>
         <div className="mt-3 flex flex-wrap gap-2">
           <a href="/v4-final-master.html" target="_blank" className="inline-flex items-center gap-1.5 rounded-full bg-indigo-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-indigo-700">
-            🎨 גרסת HTML עצמאית (30 תמונות)
+            🎨 גרסת HTML עצמאית
           </a>
           <a href="https://drive.google.com/drive/folders/1--ANI8t5vdkvzDPWnWkL9GJJH-xj_ase" target="_blank" rel="noopener" className="inline-flex items-center gap-1 rounded-full border border-purple-300 px-4 py-2 text-sm font-bold text-purple-700 transition hover:bg-purple-50">
             📁 כל הקבצים (Drive) ↗
           </a>
         </div>
+      </div>
+
+      {/* Troubleshooting */}
+      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5">
+        <h3 className="font-bold text-amber-900">⚠️ פתרון בעיות</h3>
+        <ul className="mt-2 space-y-2 text-sm text-amber-800">
+          <li>• <strong>רואה רק כרטיסיה 1?</strong> → Deck Options → New cards/day → שנה ל-20</li>
+          <li>• <strong>שגיאת sticky?</strong> → תוריד את הגרסה המתוקנת למעלה (FIXED)</li>
+          <li>• <strong>לא מצליח לייבא?</strong> → File → Import → בחר TSV → Field separator: Tab</li>
+        </ul>
       </div>
 
       {/* Per-Unit Downloads */}
