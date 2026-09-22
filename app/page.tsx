@@ -63,8 +63,8 @@ export default function HomePage() {
         <div className="flex items-center gap-3">
           <span className="text-2xl">🆕</span>
           <div>
-            <div className="font-extrabold">V5 ULTIMATE — 280 כרטיסיות</div>
-            <div className="text-[12px] text-purple-100">2 באגים תוקנו · 14 יחידות (כולל Dating & System) · 585 מדיה</div>
+            <div className="font-extrabold">V6 ULTIMATE — 278 מילים + אודיו אמיתי</div>
+            <div className="text-[12px] text-purple-100">14 יחידות · 278 MP3 אמיתיים · 0 placeholder</div>
           </div>
         </div>
         <a href="/anki" className="mt-2 inline-block rounded-full bg-white/20 px-4 py-1.5 text-sm font-bold transition hover:bg-white/30">

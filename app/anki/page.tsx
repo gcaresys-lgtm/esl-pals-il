@@ -37,11 +37,11 @@ export default function AnkiPage() {
       <div className="rounded-2xl border-2 border-purple-200 bg-purple-50 p-5 shadow-sm">
         <div className="flex items-center gap-2 text-lg font-bold text-purple-900">
           <Download className="h-5 w-5" />
-          V5 ULTIMATE FIXED — 280 כרטיסיות
+          V6 ULTIMATE — 278 מילים + אודיו אמיתי!
         </div>
-        <p className="mt-1 text-sm text-purple-700">14 יחידות · 585 מדיה · 2.78MB — דאבל קליק ל-Anki</p>
-        <a href="/anki/esl-pals-v5-ULTIMATE-FIXED-280-cards-2.78MB.apkg" download className="mt-3 inline-flex items-center gap-2 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-purple-700">
-          📦 V5 ULTIMATE FIXED (2.78MB)
+        <p className="mt-1 text-sm text-purple-700">14 יחידות · 278 MP3 אמיתיים (edge-tts) · 3.05MB</p>
+        <a href="/anki/esl-pals-v6-278-words-REAL-TTS.apkg" download className="mt-3 inline-flex items-center gap-2 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-purple-700">
+          📦 V6 ULTIMATE — 278 מילים + אודיו (3.05MB)
         </a>
         <div className="mt-3 flex flex-wrap gap-2">
           <a href="/v4-final-master.html" target="_blank" className="inline-flex items-center gap-1.5 rounded-full bg-indigo-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-indigo-700">
