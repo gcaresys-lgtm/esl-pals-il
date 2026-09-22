@@ -1,0 +1,104 @@
+[
+  {
+    "topic": "Animals",
+    "topicHe": "חיות",
+    "icon": "🐾",
+    "words": [
+      {"en": "cat", "he": "חתול", "ipa": "/kæt/", "example_en": "The cat is sleeping on the sofa.", "example_he": "החתול ישן על הספה."},
+      {"en": "dog", "he": "כלב", "ipa": "/dɒɡ/", "example_en": "My dog likes to play in the park.", "example_he": "הכלב שלי אוהב לשחק בפארק."},
+      {"en": "bird", "he": "ציפור", "ipa": "/bɜːd/", "example_en": "Look! A bird is flying in the sky.", "example_he": "תראי! ציפור עפה בשמיים."},
+      {"en": "fish", "he": "דג", "ipa": "/fɪʃ/", "example_en": "The fish swims in the bowl.", "example_he": "הדג שוחה בקערה."},
+      {"en": "rabbit", "he": "ארנב", "ipa": "/ˈræbɪt/", "example_en": "The rabbit has long ears.", "example_he": "לארנב יש אוזניים ארוכות."},
+      {"en": "horse", "he": "סוס", "ipa": "/hɔːs/", "example_en": "The horse runs fast.", "example_he": "הסוס רץ מהר."},
+      {"en": "mouse", "he": "עכבר", "ipa": "/maʊs/", "example_en": "A small mouse is under the table.", "example_he": "עכבר קטן מתחת לשולחן."},
+      {"en": "elephant", "he": "פיל", "ipa": "/ˈelɪfənt/", "example_en": "The elephant is very big.", "example_he": "הפיל מאוד גדול."},
+      {"en": "monkey", "he": "קוף", "ipa": "/ˈmʌŋki/", "example_en": "The monkey eats a banana.", "example_he": "הקוף אוכל בננה."},
+      {"en": "snake", "he": "נחש", "ipa": "/sneɪk/", "example_en": "The snake is long and green.", "example_he": "הנחש ארוך וירוק."}
+    ]
+  },
+  {
+    "topic": "Family & People",
+    "topicHe": "משפחה ואנשים",
+    "icon": "👨‍👩‍👧‍👦",
+    "words": [
+      {"en": "mother", "he": "אמא", "ipa": "/ˈmʌðə/", "example_en": "My mother cooks dinner every day.", "example_he": "אמא שלי מבשלת ארוחת ערב כל יום."},
+      {"en": "father", "he": "אבא", "ipa": "/ˈfɑːðə/", "example_en": "My father reads me a story.", "example_he": "אבא שלי קורא לי סיפור."},
+      {"en": "sister", "he": "אחות", "ipa": "/ˈsɪstə/", "example_en": "My sister is five years old.", "example_he": "אחותי בת חמש."},
+      {"en": "brother", "he": "אח", "ipa": "/ˈbrʌðə/", "example_en": "My brother plays football.", "example_he": "האח שלי משחק כדורגל."},
+      {"en": "baby", "he": "תינוק", "ipa": "/ˈbeɪbi/", "example_en": "The baby is smiling.", "example_he": "התינוק מחייך."},
+      {"en": "friend", "he": "חבר", "ipa": "/frend/", "example_en": "She is my best friend.", "example_he": "היא החברה הכי טובה שלי."},
+      {"en": "teacher", "he": "מורה", "ipa": "/ˈtiːtʃə/", "example_en": "The teacher is very nice.", "example_he": "המורה מאוד נחמדה."},
+      {"en": "doctor", "he": "רופא", "ipa": "/ˈdɒktə/", "example_en": "The doctor helps sick people.", "example_he": "הרופא עוזר לאנשים חולים."},
+      {"en": "boy", "he": "ילד", "ipa": "/bɔɪ/", "example_en": "The boy is playing with a ball.", "example_he": "הילד משחק עם כדור."},
+      {"en": "girl", "he": "ילדה", "ipa": "/ɡɜːl/", "example_en": "The girl has a red dress.", "example_he": "לילדה יש שמלה אדומה."}
+    ]
+  },
+  {
+    "topic": "School",
+    "topicHe": "בית ספר",
+    "icon": "🏫",
+    "words": [
+      {"en": "book", "he": "ספר", "ipa": "/bʊk/", "example_en": "I read a book every night.", "example_he": "אני קורא ספר כל ערב."},
+      {"en": "pen", "he": "עט", "ipa": "/pen/", "example_en": "Can I borrow your pen?", "example_he": "אפשר לשאול את העט שלך?"},
+      {"en": "pencil", "he": "עיפרון", "ipa": "/ˈpensəl/", "example_en": "I draw with a pencil.", "example_he": "אני מצייר עם עיפרון."},
+      {"en": "desk", "he": "שולחן כתיבה", "ipa": "/desk/", "example_en": "My books are on the desk.", "example_he": "הספרים שלי על השולחן כתיבה."},
+      {"en": "chair", "he": "כיסא", "ipa": "/tʃeə/", "example_en": "Sit on the chair, please.", "example_he": "שב על הכיסא, בבקשה."},
+      {"en": "bag", "he": "תיק", "ipa": "/bæɡ/", "example_en": "My bag is very heavy.", "example_he": "התיק שלי מאוד כבד."},
+      {"en": "eraser", "he": "מחק", "ipa": "/ɪˈreɪzə/", "example_en": "I need an eraser for my mistake.", "example_he": "אני צריך מחק לטעות שלי."},
+      {"en": "ruler", "he": "סרגל", "ipa": "/ˈruːlə/", "example_en": "Draw a line with the ruler.", "example_he": "צייר קו עם הסרגל."},
+      {"en": "classroom", "he": "כיתה", "ipa": "/ˈklɑːsruːm/", "example_en": "Our classroom has 30 students.", "example_he": "בכיתה שלנו יש30 תלמידים."},
+      {"en": "homework", "he": "שיעורי בית", "ipa": "/ˈhəʊmwɜːk/", "example_en": "I finish my homework at 4 o'clock.", "example_he": "אני מסיים שיעורי בית בארבע."}
+    ]
+  },
+  {
+    "topic": "Food & Drink",
+    "topicHe": "אוכל ושתייה",
+    "icon": "🍎",
+    "words": [
+      {"en": "apple", "he": "תפוח", "ipa": "/ˈæpəl/", "example_en": "I eat an apple every morning.", "example_he": "אני אוכל תפוח כל בוקר."},
+      {"en": "bread", "he": "לחם", "ipa": "/bred/", "example_en": "I like bread with butter.", "example_he": "אני אוהב לחם עם חמאה."},
+      {"en": "milk", "he": "חלב", "ipa": "/mɪlk/", "example_en": "I drink milk before bed.", "example_he": "אני שותה חחלב לפני השינה."},
+      {"en": "water", "he": "מים", "ipa": "/ˈwɔːtə/", "example_en": "Can I have some water, please?", "example_he": "אפשר לקבל מים, בבקשה?"},
+      {"en": "banana", "he": "בננה", "ipa": "/bəˈnɑːnə/", "example_en": "The banana is yellow.", "example_he": "הבננה צהובה."},
+      {"en": "cake", "he": "עוגה", "ipa": "/keɪk/", "example_en": "Happy birthday! Here is your cake.", "example_he": "יום הולדת שמח! הנה העוגה שלך."},
+      {"en": "egg", "he": "ביצה", "ipa": "/eɡ/", "example_en": "I have an egg for breakfast.", "example_he": "יש לי ביצה לארוחת בוקר."},
+      {"en": "rice", "he": "אורז", "ipa": "/raɪs/", "example_en": "We eat rice with chicken.", "example_he": "אנחנו אוכלים אורז עם עוף."},
+      {"en": "orange", "he": "תפוז", "ipa": "/ˈɒrɪndʒ/", "example_en": "The orange is sweet and juicy.", "example_he": "התפוז מתוק ומלא מיץ."},
+      {"en": "juice", "he": "מיץ", "ipa": "/dʒuːs/", "example_en": "I love orange juice.", "example_he": "אני אוהב מיץ תפוזים."}
+    ]
+  },
+  {
+    "topic": "Home",
+    "topicHe": "בית",
+    "icon": "🏠",
+    "words": [
+      {"en": "door", "he": "דלת", "ipa": "/dɔː/", "example_en": "Please close the door.", "example_he": "בבקשה סגור את הדלת."},
+      {"en": "window", "he": "חלון", "ipa": "/ˈwɪndəʊ/", "example_en": "Open the window, it's hot.", "example_he": "פתח את החלון, חם."},
+      {"en": "bed", "he": "מיטה", "ipa": "/bed/", "example_en": "I go to bed at 9 o'clock.", "example_he": "אני הולך למיטה בתשע."},
+      {"en": "table", "he": "שולחן", "ipa": "/ˈteɪbəl/", "example_en": "The food is on the table.", "example_he": "האוכל על השולחן."},
+      {"en": "bathroom", "he": "שירותים", "ipa": "/ˈbɑːθruːm/", "example_en": "The bathroom is on the left.", "example_he": "השירותים בצד שמאל."},
+      {"en": "kitchen", "he": "מטבח", "ipa": "/ˈkɪtʃɪn/", "example_en": "Mom is in the kitchen.", "example_he": "אמא במטבח."},
+      {"en": "garden", "he": "גן", "ipa": "/ˈɡɑːdən/", "example_en": "We play in the garden.", "example_he": "אנחנו משחקים בגן."},
+      {"en": "floor", "he": "רצפה", "ipa": "/flɔː/", "example_en": "The ball is on the floor.", "example_he": "הכדור על הרצפה."},
+      {"en": "clock", "he": "שעון", "ipa": "/klɒk/", "example_en": "The clock says it's 3 o'clock.", "example_he": "השעון מראה שלוש."},
+      {"en": "lamp", "he": "מנורה", "ipa": "/læmp/", "example_en": "Turn on the lamp, please.", "example_he": "הדלק את המנורה, בבקשה."}
+    ]
+  },
+  {
+    "topic": "Sports & Leisure",
+    "topicHe": "ספורט ופנאי",
+    "icon": "⚽",
+    "words": [
+      {"en": "football", "he": "כדורגל", "ipa": "/ˈfʊtbɔːl/", "example_en": "We play football at school.", "example_he": "אנחנו משחקים כדורגל בבית ספר."},
+      {"en": "ball", "he": "כדור", "ipa": "/bɔːl/", "example_en": "Throw the ball to me!", "example_he": "זרוק לי את הכדור!"},
+      {"en": "swim", "he": "לשחות", "ipa": "/swɪm/", "example_en": "I swim in the pool every summer.", "example_he": "אני שוחה בבריכה כל קיץ."},
+      {"en": "run", "he": "לרוץ", "ipa": "/rʌn/", "example_en": "Can you run fast?", "example_he": "אתה יכול לרוץ מהר?"},
+      {"en": "jump", "he": "לקפוץ", "ipa": "/dʒʌmp/", "example_en": "The children jump on the trampoline.", "example_he": "הילדים קופצים על הטרמפולינה."},
+      {"en": "bike", "he": "אופניים", "ipa": "/baɪk/", "example_en": "I ride my bike to school.", "example_he": "אני רוכב על האופניים לבית ספר."},
+      {"en": "song", "he": "שיר", "ipa": "/sɒŋ/", "example_en": "Let's sing a song together!", "example_he": "בואו נשיר שיר ביחד!"},
+      {"en": "draw", "he": "לצייר", "ipa": "/drɔː/", "example_en": "I like to draw pictures.", "example_he": "אני אוהב לצייר תמונות."},
+      {"en": "game", "he": "משחק", "ipa": "/ɡeɪm/", "example_en": "This game is so much fun!", "example_he": "המשחק הזה ממש כיף!"},
+      {"en": "dance", "he": "לרקוד", "ipa": "/dɑːns/", "example_en": "She loves to dance.", "example_he": "היא אוהבת לרקוד."}
+    ]
+  }
+]
