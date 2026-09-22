@@ -39,6 +39,18 @@ export default function AnkiPage() {
         </a>
       </div>
 
+      {/* APKG Download */}
+      <div className="rounded-2xl border-2 border-purple-200 bg-purple-50 p-5 shadow-sm">
+        <div className="flex items-center gap-2 text-lg font-bold text-purple-900">
+          <Download className="h-5 w-5" />
+          חבילה מוכנה (APKG)
+        </div>
+        <p className="mt-1 text-sm text-purple-700">240 כרטיסיות + 30 תמונות AI אמיתיות — דאבל קליק ל-Anki</p>
+        <a href="/anki/esl-pals-v4-final-30-real.apkg" download className="mt-3 inline-flex items-center gap-2 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-purple-700">
+          📦 הורד APKG (2.9MB)
+        </a>
+      </div>
+
       {/* Per-Unit Downloads */}
       <div className="space-y-3">
         <h2 className="text-lg font-bold text-zinc-900">📋 הורדה לפי יחידה</h2>
