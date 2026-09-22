@@ -2,7 +2,7 @@ import { Download, BookOpen, ArrowLeft, FileText, Smartphone, Monitor, Lightbulb
 import Link from "next/link";
 import { UNITS } from "@/lib/units-data";
 
-export const metadata = { title: "הורדת כרטיסיות אנקי — ESL Pals IL V5 ULTIMATE" };
+export const metadata = { title: "הורדת כרטיסיות אנקי — ESL Pals IL V6 ULTIMATE" };
 
 export default function AnkiPage() {
   const totalWords = UNITS.reduce((s, u) => s + u.words.length, 0);
@@ -18,22 +18,23 @@ export default function AnkiPage() {
         <div className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 text-2xl">📥</div>
           <div>
-            <h1 className="text-2xl font-extrabold tracking-tight">V5 ULTIMATE — 280 כרטיסיות</h1>
-            <p className="text-sm text-purple-100">2 באגים תוקנו · 14 יחידות · עובד 100% ב-Anki 24+</p>
+            <h1 className="text-2xl font-extrabold tracking-tight">V6 ULTIMATE — 278 מילים + אודיו אמיתי</h1>
+            <p className="text-sm text-purple-100">14 יחידות · 278 MP3 אמיתיים · 0 placeholder · עובד ב-Anki 24+</p>
           </div>
         </div>
       </div>
 
-      {/* Bug Fixes */}
+      {/* V6 Features */}
       <div className="rounded-2xl border-2 border-green-200 bg-green-50 p-5">
-        <h3 className="flex items-center gap-2 font-bold text-green-900"><CheckCircle2 className="h-5 w-5" /> באגים תוקנו</h3>
+        <h3 className="flex items-center gap-2 font-bold text-green-900"><CheckCircle2 className="h-5 w-5" /> מה חדש ב-V6</h3>
         <ul className="mt-3 space-y-2 text-sm text-green-800">
-          <li className="flex items-start gap-2"><span className="font-bold text-green-600">✅</span><span><strong>missing field sticky</strong> — תוקן (כל 20 השדות sticky:false)</span></li>
-          <li className="flex items-start gap-2"><span className="font-bold text-green-600">✅</span><span><strong>152 missing from archive</strong> — תוקן (585 מדיה, 0 missing)</span></li>
+          <li className="flex items-start gap-2"><span className="font-bold text-green-600">✅</span><span><strong>278 מילים אמיתיות</strong> — 0 placeholder, כל היחידות עם תוכן</span></li>
+          <li className="flex items-start gap-2"><span className="font-bold text-green-600">🔊</span><span><strong>278 MP3 אמיתיים</strong> — אודיו מוטמע בכל כרטיסייה (edge-tts)</span></li>
+          <li className="flex items-start gap-2"><span className="font-bold text-green-600">🆕</span><span><strong>Units 13-14</strong> — Dating + System עם תוכן מלא</span></li>
         </ul>
       </div>
 
-      {/* V5 Download */}
+      {/* V6 Download */}
       <div className="rounded-2xl border-2 border-purple-200 bg-purple-50 p-5 shadow-sm">
         <div className="flex items-center gap-2 text-lg font-bold text-purple-900">
           <Download className="h-5 w-5" />
@@ -55,7 +56,7 @@ export default function AnkiPage() {
 
       {/* New Units */}
       <div className="rounded-2xl border border-indigo-100 bg-indigo-50 p-5">
-        <h3 className="font-bold text-indigo-900">🆕 יחידות חדשות ב-V5</h3>
+        <h3 className="font-bold text-indigo-900">🆕 יחידות חדשות ב-V6</h3>
         <div className="mt-3 space-y-3">
           <div className="rounded-xl bg-white p-4">
             <div className="font-bold text-zinc-900">💕 יחידה 13: Dating (הכרויות)</div>
@@ -136,8 +137,8 @@ export default function AnkiPage() {
         <h3 className="font-bold text-amber-900">⚠️ פתרון בעיות</h3>
         <ul className="mt-2 space-y-2 text-sm text-amber-800">
           <li>• <strong>רואה רק כרטיסיה 1?</strong> → Deck Options → New cards/day → שנה ל-20</li>
-          <li>• <strong>שגיאת sticky?</strong> → גרסה V5 תוקנה — תוריד מחדש</li>
-          <li>• <strong>152 missing?</strong> → גרסה V5 תוקנה — 585 מדיה, 0 missing</li>
+          <li>• <strong>שגיאת sticky?</strong> → V6 תוקן — תוריד מחדש</li>
+          <li>• <strong>152 missing?</strong> → V6 תוקן — 0 missing</li>
         </ul>
       </div>
 
