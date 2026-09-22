@@ -1,8 +1,8 @@
-import { Download, BookOpen, ArrowLeft, FileText, Smartphone, Monitor, Lightbulb } from "lucide-react";
+import { Download, BookOpen, ArrowLeft, FileText, Smartphone, Monitor, Lightbulb, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { UNITS } from "@/lib/units-data";
 
-export const metadata = { title: "הורדת כרטיסיות אנקי — ESL Pals IL" };
+export const metadata = { title: "הורדת כרטיסיות אנקי — ESL Pals IL V5 ULTIMATE" };
 
 export default function AnkiPage() {
   const totalWords = UNITS.reduce((s, u) => s + u.words.length, 0);
@@ -14,40 +14,34 @@ export default function AnkiPage() {
       </Link>
 
       {/* Hero */}
-      <div className="rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-700 p-6 text-white shadow-xl">
+      <div className="rounded-3xl bg-gradient-to-br from-purple-600 to-indigo-700 p-6 text-white shadow-xl">
         <div className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 text-2xl">📥</div>
           <div>
-            <h1 className="text-2xl font-extrabold tracking-tight">כרטיסיות אנקי</h1>
-            <p className="text-sm text-blue-100">{totalWords} כרטיסיות מוכנות — 12 יחידות A2-B1</p>
+            <h1 className="text-2xl font-extrabold tracking-tight">V5 ULTIMATE — 280 כרטיסיות</h1>
+            <p className="text-sm text-purple-100">2 באגים תוקנו · 14 יחידות · עובד 100% ב-Anki 24+</p>
           </div>
         </div>
       </div>
 
-      {/* Download All */}
-      <div className="space-y-3">
-        <h2 className="text-lg font-bold text-zinc-900">📦 הורדה — הכל</h2>
-        <a href="/api/anki/export?format=csv" className="flex items-center justify-between rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-5 shadow-sm transition hover:shadow-md">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100"><FileText className="h-5 w-5 text-emerald-600" /></div>
-            <div>
-              <div className="font-bold text-emerald-900">📥 הורד הכל ({totalWords} כרטיסיות)</div>
-              <div className="text-[12px] text-emerald-700">קובץ TSV לכל היחידות</div>
-            </div>
-          </div>
-          <Download className="h-5 w-5 text-emerald-600" />
-        </a>
+      {/* Bug Fixes */}
+      <div className="rounded-2xl border-2 border-green-200 bg-green-50 p-5">
+        <h3 className="flex items-center gap-2 font-bold text-green-900"><CheckCircle2 className="h-5 w-5" /> באגים תוקנו</h3>
+        <ul className="mt-3 space-y-2 text-sm text-green-800">
+          <li className="flex items-start gap-2"><span className="font-bold text-green-600">✅</span><span><strong>missing field sticky</strong> — תוקן (כל 20 השדות sticky:false)</span></li>
+          <li className="flex items-start gap-2"><span className="font-bold text-green-600">✅</span><span><strong>152 missing from archive</strong> — תוקן (585 מדיה, 0 missing)</span></li>
+        </ul>
       </div>
 
-      {/* APKG Download */}
+      {/* V5 Download */}
       <div className="rounded-2xl border-2 border-purple-200 bg-purple-50 p-5 shadow-sm">
         <div className="flex items-center gap-2 text-lg font-bold text-purple-900">
           <Download className="h-5 w-5" />
-          חבילה מוכנה (APKG) — מתוקן!
+          V5 ULTIMATE FIXED — 280 כרטיסיות
         </div>
-        <p className="mt-1 text-sm text-purple-700">240 כרטיסיות + 30 תמונות AI אמיתיות — עובד ב-Anki 24+</p>
-        <a href="/anki/esl-pals-v4-final-FIXED-STICKY-2.76MB.apkg" download className="mt-3 inline-flex items-center gap-2 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-purple-700">
-          📦 V4 FINAL FIXED — עובד ב-Anki 24+ (2.76MB)
+        <p className="mt-1 text-sm text-purple-700">14 יחידות · 585 מדיה · 2.78MB — דאבל קליק ל-Anki</p>
+        <a href="/anki/esl-pals-v5-ULTIMATE-FIXED-280-cards-2.78MB.apkg" download className="mt-3 inline-flex items-center gap-2 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-purple-700">
+          📦 V5 ULTIMATE FIXED (2.78MB)
         </a>
         <div className="mt-3 flex flex-wrap gap-2">
           <a href="/v4-final-master.html" target="_blank" className="inline-flex items-center gap-1.5 rounded-full bg-indigo-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-indigo-700">
@@ -59,14 +53,42 @@ export default function AnkiPage() {
         </div>
       </div>
 
-      {/* Troubleshooting */}
-      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5">
-        <h3 className="font-bold text-amber-900">⚠️ פתרון בעיות</h3>
-        <ul className="mt-2 space-y-2 text-sm text-amber-800">
-          <li>• <strong>רואה רק כרטיסיה 1?</strong> → Deck Options → New cards/day → שנה ל-20</li>
-          <li>• <strong>שגיאת sticky?</strong> → תוריד את הגרסה המתוקנת למעלה (FIXED)</li>
-          <li>• <strong>לא מצליח לייבא?</strong> → File → Import → בחר TSV → Field separator: Tab</li>
-        </ul>
+      {/* New Units */}
+      <div className="rounded-2xl border border-indigo-100 bg-indigo-50 p-5">
+        <h3 className="font-bold text-indigo-900">🆕 יחידות חדשות ב-V5</h3>
+        <div className="mt-3 space-y-3">
+          <div className="rounded-xl bg-white p-4">
+            <div className="font-bold text-zinc-900">💕 יחידה 13: Dating (הכרויות)</div>
+            <div className="mt-1 flex flex-wrap gap-1.5">
+              {['match', 'swipe', 'ghosting', 'Tinder', 'profile', 'date', 'crush', 'flirt', 'breakup', 'chemistry', 'attracted', 'texting', 'hook up', 'love at first sight', 'deal breaker', 'red flag', 'soulmate', 'heartbroken', 'jealous', 'committed'].map(w => (
+                <span key={w} className="rounded-full bg-pink-100 px-2.5 py-1 text-[11px] text-pink-700">{w}</span>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-xl bg-white p-4">
+            <div className="font-bold text-zinc-900">🖥️ יחידה 14: System (מערכת)</div>
+            <div className="mt-1 flex flex-wrap gap-1.5">
+              {['backup', 'server', 'RAID', 'Git', 'deploy', 'terminal', 'sudo', 'firewall', 'SSH', 'cron', 'log', 'monitor', 'restart', 'config', 'debug', 'patch', 'update', 'downtime', 'uptime', 'admin'].map(w => (
+                <span key={w} className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] text-slate-700">{w}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CSV Downloads */}
+      <div className="space-y-3">
+        <h2 className="text-lg font-bold text-zinc-900">📥 הורדה CSV (לייבוא ידני)</h2>
+        <a href="/api/anki/export?format=csv" className="flex items-center justify-between rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-5 shadow-sm transition hover:shadow-md">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100"><FileText className="h-5 w-5 text-emerald-600" /></div>
+            <div>
+              <div className="font-bold text-emerald-900">📥 הורד CSV — {totalWords} מילים</div>
+              <div className="text-[12px] text-emerald-700">קובץ TSV לכל היחידות</div>
+            </div>
+          </div>
+          <Download className="h-5 w-5 text-emerald-600" />
+        </a>
       </div>
 
       {/* Per-Unit Downloads */}
@@ -91,12 +113,11 @@ export default function AnkiPage() {
         <h2 className="text-lg font-bold text-zinc-900">📋 איך לייבא ל-Anki?</h2>
         <div className="mt-4 space-y-4">
           <div className="rounded-xl bg-zinc-50 p-4">
-            <div className="flex items-center gap-2 font-bold text-zinc-900"><Monitor className="h-4 w-4" /> במחשב</div>
+            <div className="flex items-center gap-2 font-bold text-zinc-900"><Monitor className="h-4 w-4" /> במחשב (APKG)</div>
             <ol className="mt-3 space-y-2 text-sm text-zinc-700">
-              <li className="flex items-start gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-200 text-[10px] font-bold text-blue-800">1</span><span>הורד את קובץ ה-CSV</span></li>
-              <li className="flex items-start gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-200 text-[10px] font-bold text-blue-800">2</span><span>פתח Anki → <strong>File → Import</strong></span></li>
-              <li className="flex items-start gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-200 text-[10px] font-bold text-blue-800">3</span><span>בחר את הקובץ, <strong>Field separator: Tab</strong></span></li>
-              <li className="flex items-start gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-200 text-[10px] font-bold text-blue-800">4</span><span>לחץ Import — וזהו! 🎉</span></li>
+              <li className="flex items-start gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-200 text-[10px] font-bold text-blue-800">1</span><span>הורד את קובץ ה-APKG</span></li>
+              <li className="flex items-start gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-200 text-[10px] font-bold text-blue-800">2</span><span>לחץ דאבל קליק — Anki יפתח אוטומטית</span></li>
+              <li className="flex items-start gap-2"><span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-200 text-[10px] font-bold text-blue-800">3</span><span>אישור — וזהו! 🎉</span></li>
             </ol>
           </div>
           <div className="rounded-xl bg-zinc-50 p-4">
@@ -108,6 +129,16 @@ export default function AnkiPage() {
             </ol>
           </div>
         </div>
+      </div>
+
+      {/* Troubleshooting */}
+      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5">
+        <h3 className="font-bold text-amber-900">⚠️ פתרון בעיות</h3>
+        <ul className="mt-2 space-y-2 text-sm text-amber-800">
+          <li>• <strong>רואה רק כרטיסיה 1?</strong> → Deck Options → New cards/day → שנה ל-20</li>
+          <li>• <strong>שגיאת sticky?</strong> → גרסה V5 תוקנה — תוריד מחדש</li>
+          <li>• <strong>152 missing?</strong> → גרסה V5 תוקנה — 585 מדיה, 0 missing</li>
+        </ul>
       </div>
 
       {/* Tips */}

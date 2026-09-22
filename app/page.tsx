@@ -4,7 +4,7 @@ import { UNITS } from "@/lib/units-data";
 
 export const metadata = {
   title: "ESL Pals IL — מסלול A2-B1",
-  description: "מסלול לימודי אנגלית A2-B1 לישראלים — 12 יחידות, 240 מילים, 7 דקות ביום",
+  description: "מסלול לימודי אנגלית A2-B1 לישראלים — 14 יחידות, 280 מילים, 7 דקות ביום",
 };
 
 const UNIT_ICONS: Record<number, string> = {
@@ -42,6 +42,20 @@ export default function HomePage() {
             <div className="text-[11px] text-emerald-100">רצף ימים</div>
           </div>
         </div>
+      </div>
+
+      {/* V5 Banner */}
+      <div className="rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 p-4 text-white shadow-lg">
+        <div className="flex items-center gap-3">
+          <span className="text-2xl">🆕</span>
+          <div>
+            <div className="font-extrabold">V5 ULTIMATE — 280 כרטיסיות</div>
+            <div className="text-[12px] text-purple-100">2 באגים תוקנו · 14 יחידות (כולל Dating & System) · 585 מדיה</div>
+          </div>
+        </div>
+        <a href="/anki" className="mt-2 inline-block rounded-full bg-white/20 px-4 py-1.5 text-sm font-bold transition hover:bg-white/30">
+          📥 הורדת APKG V5
+        </a>
       </div>
 
       {/* CTA */}
