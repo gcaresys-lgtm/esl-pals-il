@@ -49,6 +49,9 @@ export default function AnkiPage() {
         <a href="/anki/esl-pals-v4-final-30-real.apkg" download className="mt-3 inline-flex items-center gap-2 rounded-full bg-purple-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-purple-700">
           📦 הורד APKG (2.9MB)
         </a>
+        <a href="https://drive.google.com/drive/folders/1--ANI8t5vdkvzDPWnWkL9GJJH-xj_ase" target="_blank" rel="noopener" className="mt-2 ml-2 inline-flex items-center gap-1 text-sm text-purple-600 underline">
+          📄 גרסת HTML עצמאית (Drive) ↗
+        </a>
       </div>
 
       {/* Per-Unit Downloads */}
